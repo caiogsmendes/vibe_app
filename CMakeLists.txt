@@ -29,7 +29,7 @@ add_library(Vibe-lib
 )
 
 # Object files
-add_executable(vibracao_v2 vibracao_v2.c)
+add_executable(vibracao vibracao_v2.c)
 
 # target_include_directories(vibracao_v2 PUBLIC /usr/include/libusb-1.0)
 
@@ -61,7 +61,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Vibe-lib
                                                 )
 
 # Install target
-install(TARGETS vibracao_v2 DESTINATION bin)
+install(TARGETS vibracao DESTINATION bin)
 
 # # Clean target
 # add_custom_target(clean_all
