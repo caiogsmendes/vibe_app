@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(vibracao_v2 VERSION 1.0 LANGUAGES C CXX)
+project(vibracao VERSION 1.0 LANGUAGES C CXX)
 
 # Source files
 # set(SOURCE
@@ -29,15 +29,15 @@ add_library(Vibe-lib
 )
 
 # Object files
-add_executable(vibracao vibracao_v2.c)
+add_executable(${PROJECT_NAME} vibracao_v2.c)
 
 # target_include_directories(vibracao_v2 PUBLIC /usr/include/libusb-1.0)
 
 # target_link_libraries(Vibracao_teste PUBLIC ${LIBUSB_LIBRARY_PATH})
 
 # Include directories
-target_include_directories(vibracao_v2 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_include_directories(vibracao_v2 PUBLIC Vibe-lib)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC Vibe-lib)
 
 # Compiler flags
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lusb-1.0 -pthread")
@@ -61,7 +61,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Vibe-lib
                                                 )
 
 # Install target
-install(TARGETS vibracao DESTINATION bin)
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
 # # Clean target
 # add_custom_target(clean_all
