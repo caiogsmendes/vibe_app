@@ -43,7 +43,7 @@ int main(){
 	int ret;
 	char chip[10];
 	unsigned int offset;
-    const char* gpiochip4 = "4";
+    const char* gpiochip4 = "5";
     int SODIMM127 = 5;
     int SODIMM129 = 3;
 
