@@ -43,7 +43,8 @@ int main(){
 	int ret;
 	char chip[10];
 	unsigned int offset;
-    const char* gpiochip4 = "5";
+    const char* gpiochip4 = "4";
+    const char* gpiochip5 = "5";
     int SODIMM127 = 5;
     int SODIMM129 = 3;
 
@@ -51,6 +52,10 @@ int main(){
     FILE* fptr;
     fptr = fopen("Vibe_Test_Log.txt","w+");
     snprintf(chip, sizeof(chip), "gpiochip%s", gpiochip4);
+    offset = SODIMM127;
+    gpiod_ctxless_set_value(chip, offset, 0, false, "gpio-toggle", NULL, NULL); // Lower the hackRF RST_pin
+    
+    snprintf(chip, sizeof(chip), "gpiochip%s", gpiochip5);
     offset = SODIMM127;
     gpiod_ctxless_set_value(chip, offset, 0, false, "gpio-toggle", NULL, NULL); // Lower the hackRF RST_pin
 
